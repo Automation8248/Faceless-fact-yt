@@ -1,0 +1,46 @@
+name: Daily Fact Shorts Generator
+
+on:
+  schedule:
+    - cron: '0 10 * * *' # Runs daily at 10:00 AM UTC
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  build-and-post:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install System Dependencies (ImageMagick)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y imagemagick
+        # Fix ImageMagick policy to allow TextClip rendering
+        sudo sed -i 's/none/read,write/g' /etc/ImageMagick-6/policy.xml
+
+    - name: Install Python Dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Automation Script
+      env:
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        TELEGRAM_BOT_TOKEN_SUCCESS: ${{ secrets.TELEGRAM_BOT_TOKEN_SUCCESS }}
+        TELEGRAM_BOT_TOKEN_FAIL: ${{ secrets.TELEGRAM_BOT_TOKEN_FAIL }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: python main.py
+
+    - name: Commit and Push Updated History & Cache
+      run: |
+        git config --global user.name "GitHub Actions Bot"
+        git config --global user.email "actions@github.com"
+        git add history.json facts/*/images/*
+        git commit -m "Update history and cached images [skip ci]" || echo "No changes to commit"
+        git push
