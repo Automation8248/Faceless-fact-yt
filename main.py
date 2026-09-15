@@ -25,10 +25,12 @@ UPLOAD_SERVERS = [
     {"url": "https://api.anonfiles.com/upload", "data": {}, "file_key": "file"},
     {"url": "https://file.io", "data": {}, "file_key": "file"},
     {"url": "https://bashupload.com/", "data": {}, "file_key": "file"},
+    {"url": "https://store1.gofile.io/uploadFile", "data": {}, "file_key": "file"},
+    {"url": "https://temp.sh/upload", "data": {}, "file_key": "file"},
     {"url": "https://api.bayfiles.com/upload", "data": {}, "file_key": "file"},
     {"url": "https://up.labstack.com/api/v1/links", "data": {}, "file_key": "file"},
     {"url": "https://transfer.sh/", "data": {}, "file_key": "file"},
-    {"url": "https://v.gd/create.php", "data": {"format": "simple"}, "file_key": "url"}, # URL shortener fallback
+    {"url": "https://v.gd/create.php", "data": {"format": "simple"}, "file_key": "url"}, 
     {"url": "https://api.filemail.com/api/file/upload", "data": {}, "file_key": "file"},
     {"url": "https://pomf.lain.la/upload.php", "data": {}, "file_key": "files[]"},
     {"url": "https://suki.moe/api/upload", "data": {}, "file_key": "file"},
@@ -77,7 +79,7 @@ def parse_vtt_to_clips(vtt_file, video_size=(1080, 1920)):
         
     return clips
 
-def manage_image_limit(folder_path, limit=20):
+def manage_image_limit(folder_path, limit=10):
     images = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg'))]
     if len(images) >= limit:
         images.sort(key=os.path.getmtime)
@@ -93,7 +95,7 @@ def get_image_from_api(prompt, local_folder):
         img_url = response.get("url") or response.get("image") or response.get("image_url")
         if img_url:
             img_data = requests.get(img_url).content
-            manage_image_limit(local_folder, limit=20)
+            manage_image_limit(local_folder, limit=10)
             file_path = os.path.join(local_folder, f"{int(datetime.datetime.now().timestamp())}.jpg")
             with open(file_path, 'wb') as f:
                 f.write(img_data)
@@ -144,36 +146,35 @@ async def main():
             try: history = json.load(f)
             except: history = {}
 
-        # Select 3 Random Distinct Facts
+        # Scan for valid topics and categories (Skipping empty ones)
+        if not os.path.exists(BASE_DIR):
+            raise Exception(f"Main directory '{BASE_DIR}' not found!")
+            
         topics = [d for d in os.listdir(BASE_DIR) if os.path.isdir(os.path.join(BASE_DIR, d))]
-        if not topics: raise Exception("No Topics found!")
         
-        selected_data = []
-        available_categories = []
-        
+        all_valid_facts = []
         for t in topics:
             t_path = os.path.join(BASE_DIR, t)
-            for c in os.listdir(t_path):
-                if os.path.isdir(os.path.join(t_path, c)):
-                    available_categories.append({"topic": t, "category": c})
-                    
-        random.shuffle(available_categories)
-        
-        for item in available_categories:
-            if len(selected_data) == 3: break
-            v_facts = get_valid_facts(item["topic"], item["category"], history)
-            if v_facts:
-                chosen_fact = random.choice(v_facts)
-                selected_data.append({
-                    "topic": item["topic"],
-                    "category": item["category"],
-                    "fact": chosen_fact
-                })
-                # Temporary add to history to avoid duplicate selection in same run
-                history[chosen_fact] = datetime.datetime.now().isoformat()
+            categories = [d for d in os.listdir(t_path) if os.path.isdir(os.path.join(t_path, d))]
+            for c in categories:
+                v_facts = get_valid_facts(t, c, history)
+                # Only add facts if they exist, inherently ignoring empty folders
+                for f in v_facts:
+                    all_valid_facts.append({
+                        "topic": t,
+                        "category": c,
+                        "fact": f
+                    })
 
-        if len(selected_data) < 3:
-            raise Exception("Not enough fresh facts across categories to select 3 distinct facts.")
+        if len(all_valid_facts) < 3:
+            raise Exception("Not enough valid facts found across folders. Needs at least 3 fresh facts.")
+
+        # Randomly select exactly 3 distinct facts from the entire valid pool
+        selected_data = random.sample(all_valid_facts, 3)
+        
+        # Add to history to ensure timer starts
+        for data in selected_data:
+            history[data["fact"]] = datetime.datetime.now().isoformat()
 
         # Hook setup
         with open("hooks.txt", "r") as f:
