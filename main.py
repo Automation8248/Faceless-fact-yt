@@ -59,10 +59,24 @@ async def generate_audio_and_subs(text, voice, audio_filename, vtt_filename):
             elif chunk["type"] == "WordBoundary":
                 subs.append((chunk["offset"], chunk["duration"], chunk["text"]))
                 
+    # 2 words ka chunk banayenge VTT ke liye
+    chunks = []
+    current_chunk = []
+    chunk_start = 0
+    
+    for i, (offset, duration, word) in enumerate(subs):
+        if not current_chunk:
+            chunk_start = offset
+        current_chunk.append(word)
+        if len(current_chunk) >= 2 or i == len(subs) - 1:
+            chunk_duration = (offset + duration) - chunk_start
+            chunks.append((chunk_start, chunk_duration, " ".join(current_chunk)))
+            current_chunk = []
+
     # Manually generating VTT file
     with open(vtt_filename, "w", encoding="utf-8") as f:
         f.write("WEBVTT\n\n")
-        for offset, duration, word in subs:
+        for offset, duration, word in chunks:
             start_sec = offset / 10000000.0
             end_sec = (offset + duration) / 10000000.0
             
@@ -75,7 +89,7 @@ async def generate_audio_and_subs(text, voice, audio_filename, vtt_filename):
                 
             f.write(f"{format_time(start_sec)} --> {format_time(end_sec)}\n{word}\n\n")
 
-def parse_vtt_to_clips(vtt_file):
+def parse_vtt_to_clips(vtt_file, y_pos='center'):
     clips = []
     with open(vtt_file, "r", encoding="utf-8") as f:
         content = f.read()
@@ -91,8 +105,19 @@ def parse_vtt_to_clips(vtt_file):
         start_time = time_to_sec(start_str)
         end_time = time_to_sec(end_str)
         
-        txt_clip = TextClip(text.strip().replace('\n', ' '), fontsize=75, color='gold', font="Arial-Bold", method='caption', size=(900, None))
-        txt_clip = txt_clip.set_start(start_time).set_end(end_time).set_position('center')
+        words = text.strip().replace('\n', ' ').split()
+        
+        # Color Highlights Logic (Orange & White)
+        if len(words) >= 2:
+            tc1 = TextClip(words[0], fontsize=85, color='orange', font="Arial-Bold").margin(right=15, opacity=0)
+            tc2 = TextClip(" ".join(words[1:]), fontsize=85, color='white', font="Arial-Bold")
+            txt_clip = clips_array([[tc1, tc2]])
+        elif len(words) == 1:
+            txt_clip = TextClip(words[0], fontsize=85, color='orange', font="Arial-Bold")
+        else:
+            continue
+            
+        txt_clip = txt_clip.set_start(start_time).set_end(end_time).set_position(('center', y_pos))
         clips.append(txt_clip)
         
     return clips
@@ -119,17 +144,14 @@ def get_image_from_api(prompt, local_folder):
             file_path = os.path.join(local_folder, f"{int(datetime.datetime.now().timestamp())}.jpg")
             with open(file_path, 'wb') as f:
                 f.write(img_data)
-            print(f"API se image download aur save ho gayi: {file_path}")
             return file_path
     except Exception as e:
-        print(f"API Image generation fail hua: {e}. Searching for local fallback...")
+        print(f"API Failed: {e}. Switching to local fallback...")
     
     if os.path.exists(local_folder):
         images = [img for img in os.listdir(local_folder) if img.endswith(('.png', '.jpg', '.jpeg'))]
         if images: 
-            fallback = random.choice(images)
-            print(f"Local fallback image use kar raha hu: {fallback}")
-            return os.path.join(local_folder, fallback)
+            return os.path.join(local_folder, random.choice(images))
             
     return None
 
@@ -156,10 +178,8 @@ def upload_video(file_path):
                 files = {server["file_key"]: f}
                 res = requests.post(server["url"], data=server.get("data", {}), files=files, timeout=30)
                 if res.status_code == 200:
-                    try:
-                        return res.json().get('data', {}).get('file', {}).get('url', res.text.strip())
-                    except:
-                        return res.text.strip()
+                    try: return res.json().get('data', {}).get('file', {}).get('url', res.text.strip())
+                    except: return res.text.strip()
         except:
             continue
     raise Exception("Failed to upload video to all servers.")
@@ -172,10 +192,10 @@ async def main():
             except: history = {}
 
         if not os.path.exists(BASE_DIR):
-            raise Exception(f"Main '{BASE_DIR}' folder hi nahi mila!")
+            raise Exception(f"Main '{BASE_DIR}' folder nahi mila!")
 
         topics = [d for d in os.listdir(BASE_DIR) if os.path.isdir(os.path.join(BASE_DIR, d))]
-        if not topics: raise Exception("No Topics found in Base folder!")
+        if not topics: raise Exception("No Topics found!")
         
         selected_data = []
         available_categories = []
@@ -200,15 +220,11 @@ async def main():
             v_facts = [f for f in item["fresh_facts"] if f not in [sd["fact"] for sd in selected_data]]
             if v_facts:
                 chosen_fact = random.choice(v_facts)
-                selected_data.append({
-                    "topic": item["topic"],
-                    "category": item["category"],
-                    "fact": chosen_fact
-                })
+                selected_data.append({"topic": item["topic"], "category": item["category"], "fact": chosen_fact})
                 history[chosen_fact] = datetime.datetime.now().isoformat()
 
         if len(selected_data) < 3:
-            raise Exception("Kam se kam 3 facts ki zarurat hai (alag alag ya same topic/category se), par utne fresh facts bache nahi hain.")
+            raise Exception("Kam se kam 3 facts nahi mile.")
 
         if not os.path.exists("hooks.txt"):
             raise Exception("hooks.txt file nahi mili!")
@@ -217,21 +233,30 @@ async def main():
             hooks = [line.strip() for line in f if line.strip()]
         hook_text = random.choice(hooks)
 
-        await generate_audio_and_subs(hook_text, "en-US-GuyNeural", "hook.mp3", "hook.vtt")
-        
+        # Voice Gender Logic (One per video)
+        last_voice = history.get("_last_voice_", "male")
+        if last_voice == "male":
+            current_voice = "en-US-AriaNeural"  # Female voice
+            history["_last_voice_"] = "female"
+        else:
+            current_voice = "en-US-GuyNeural"   # Male voice
+            history["_last_voice_"] = "male"
+
+        # 1. Build Hook Clip
+        await generate_audio_and_subs(hook_text, current_voice, "hook.mp3", "hook.vtt")
         video_segments = []
         
         hook_audio = AudioFileClip("hook.mp3")
         hook_bg = ColorClip(size=(1080, 1920), color=(0,0,0), duration=hook_audio.duration)
-        hook_subs = parse_vtt_to_clips("hook.vtt")
+        hook_subs = parse_vtt_to_clips("hook.vtt", y_pos='center') # Hook text in Center
         hook_clip = CompositeVideoClip([hook_bg] + hook_subs).set_audio(hook_audio)
         video_segments.append(hook_clip)
 
-        voices = ["en-US-AriaNeural", "en-US-GuyNeural", "en-US-AriaNeural"]
+        # 2. Build Fact Clips
         for i, data in enumerate(selected_data):
             audio_f = f"fact{i}.mp3"
             vtt_f = f"fact{i}.vtt"
-            await generate_audio_and_subs(data["fact"], voices[i], audio_f, vtt_f)
+            await generate_audio_and_subs(data["fact"], current_voice, audio_f, vtt_f)
             
             f_audio = AudioFileClip(audio_f)
             
@@ -242,10 +267,17 @@ async def main():
                 raise Exception(f"Image nahi mili {data['category']} ke liye!")
                 
             f_bg = ColorClip(size=(1080, 1920), color=(0,0,0), duration=f_audio.duration)
-            f_img = ImageClip(img_path).resize(width=900).set_position('center').set_duration(f_audio.duration)
             
-            f_subs = parse_vtt_to_clips(vtt_f)
-            f_clip = CompositeVideoClip([f_bg, f_img] + f_subs).set_audio(f_audio)
+            # PERFECT 9:16 IMAGE FIX 
+            img_clip = ImageClip(img_path).resize(width=1080)
+            if img_clip.h > 1920:
+                img_clip = img_clip.crop(y_center=img_clip.h/2, height=1920) # Crop if too tall
+                
+            img_clip = img_clip.set_position('center').set_duration(f_audio.duration)
+            
+            # Facts Text below the image (y_pos = 1400)
+            f_subs = parse_vtt_to_clips(vtt_f, y_pos=1400)
+            f_clip = CompositeVideoClip([f_bg, img_clip] + f_subs).set_audio(f_audio)
             video_segments.append(f_clip)
 
         final_video = concatenate_videoclips(video_segments)
@@ -269,12 +301,14 @@ async def main():
         with open("history.json", "w") as f:
             json.dump(history, f, indent=4)
 
-        success_msg = f"✅ Social media name: The interesting Facts\nPost link URL: {video_url}"
+        # Updated Success Payload
+        success_msg = f"✅ Automation name: Fact Shorts\nSocial media name: The interesting Facts\nPost link URL: {video_url}"
         send_telegram(TELEGRAM_TOKEN_SUCCESS, success_msg)
         print("Success! Video created and uploaded.")
 
     except Exception as e:
-        error_msg = f"❌ Automation Failed!\nAutomation name: Fact Shorts\nSocial media name: The interesting Facts\nError: {str(e)}"
+        # Updated Error Payload
+        error_msg = f"❌ Automation Failed!\nAutomation name: Fact Shorts\nSocial media name: The interesting Facts\nReason: {str(e)}"
         print(f"Error occurred: {e}")
         send_telegram(TELEGRAM_TOKEN_FAIL, error_msg)
 
