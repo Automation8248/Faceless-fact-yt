@@ -1,351 +1,875 @@
-Cats belong to the species Felis catus.
-Cats are members of the Felidae family.
-Domestic cats are mammals.
-Cats are obligate carnivores.
-Cats have highly flexible bodies.
+Cats are mammals belonging to the family Felidae.
+Cats are domesticated members of the feline family.
 Cats have retractable claws on most of their toes.
-Cats normally have five toes on each front paw.
-Cats normally have four toes on each back paw.
-Some cats are born with extra toes.
-Extra toes in cats are called polydactyly.
-Cats walk primarily on their toes.
-Cats are digitigrade animals.
-Cats have sensitive paw pads.
-Cats have scent glands around their paw areas.
-Cats can use scratching to leave scent marks.
-Cats use scratching to help maintain their claws.
-Cats have powerful hind legs.
-Cats can jump several times their own body length.
-Cats can make rapid bursts of speed.
-Cats have flexible spines that help them move quickly.
-Cats can twist their bodies while falling.
-Cats possess a righting reflex.
-The righting reflex helps cats orient their bodies during a fall.
-Kittens develop the righting reflex during early life.
-Cats have relatively loose skin around their bodies.
-Cats have flexible shoulder structures.
-Cats have collarbones that are not rigidly attached like human collarbones.
-This skeletal structure helps cats squeeze through narrow spaces.
-Cats can squeeze through surprisingly small openings.
-Cats have strong muscles relative to their body size.
-Cats have sharp canine teeth.
-Cats use their canine teeth to grip and tear prey.
-Cats have small incisors at the front of their mouths.
-Cats have carnassial teeth adapted for cutting meat.
-Cats have fewer teeth than adult humans.
-Adult cats normally have 30 permanent teeth.
-Kittens have 26 temporary teeth.
-Cats have rough tongues covered with tiny structures called papillae.
-Cat tongue papillae point backward.
-Papillae help cats remove meat from bones.
-Papillae help cats groom their fur.
-Cat tongues can feel rough because of their papillae.
-Cats swallow some loose hair while grooming.
-Swallowed hair can sometimes form hairballs.
-Cats may cough or vomit up hairballs.
-Cats spend a significant amount of time grooming themselves.
-Grooming helps remove dirt from a cat's coat.
-Grooming helps remove loose fur.
-Grooming can help distribute natural oils through the coat.
-Cats can groom other cats.
-Social grooming can strengthen relationships between cats.
-Cats may groom humans as a social behavior.
-Cats have whiskers called vibrissae.
-Whiskers are highly sensitive specialized hairs.
-Whiskers help cats detect nearby objects.
-Whiskers can help cats judge the width of spaces.
-Whiskers can detect changes in air movement.
-Cats have whiskers above their eyes.
-Cats have whiskers on the backs of their front legs.
-Whiskers are connected to sensitive nerve endings.
-Cats can become uncomfortable if their whiskers are constantly pressed against objects.
-Cats use multiple senses while hunting.
-Cats have excellent hearing.
-Cats can hear higher frequencies than humans.
-Cats can detect high-frequency sounds produced by small prey.
+Cats use their claws for climbing and gripping surfaces.
+Cats have five toes on each front paw.
+Cats have four toes on each hind paw.
+Cats have whiskers that help detect nearby objects.
+Cats use whiskers to sense changes in air movement.
+Cats have highly sensitive whisker follicles.
+Cats have whiskers on their cheeks and above their eyes.
+Cats use their tails for balance.
+Cats use their tails to communicate body language.
+Cats can move their ears independently.
+Cats have 32 muscles controlling their outer ears.
 Cats can rotate their ears toward sounds.
-Cats have many muscles controlling their ears.
-Cats can move their ears independently to some extent.
-Cats use hearing to locate sounds.
+Cats can hear higher frequencies than humans.
+Cats can detect ultrasonic sounds.
+Cats use hearing to locate small prey.
 Cats have excellent low-light vision.
-Cats cannot see in complete darkness.
-Cats need some available light to see.
-Cats have a reflective layer behind the retina called the tapetum lucidum.
-The tapetum lucidum helps cats see better in low light.
-The tapetum lucidum can make cat eyes appear to glow.
-Cats have vertically elongated pupils.
-Cat pupils can become very narrow in bright light.
-Cat pupils become larger in dim light.
-Cat pupils can also enlarge during excitement or fear.
-Cats have a wide field of vision.
-Cats have less color vision than humans.
-Cats are generally better at detecting movement than fine color differences.
+Cats have more rod cells than humans.
+Cats have a reflective layer called the tapetum lucidum.
+Cats can have eyes that appear to glow in darkness.
+Cats have vertically slit pupils.
+Cats can rapidly change pupil size.
+Cats use pupil changes to control incoming light.
+Cats have a third eyelid called the nictitating membrane.
+Cats have eyelids that protect their eyes.
+Cats can see colors differently from humans.
+Cats are generally considered dichromatic.
+Cats can distinguish some shades of blue and green.
+Cats have a wide field of view.
+Cats have binocular vision that helps judge distance.
+Cats rely heavily on vision during hunting.
+Cats can detect movement very effectively.
 Cats have a highly developed sense of smell.
-Cats have many more scent receptors than humans.
-Cats use smell to investigate unfamiliar objects.
-Cats use smell to identify other animals.
-Cats use smell when exploring territory.
-Cats possess a vomeronasal organ.
-The vomeronasal organ is involved in detecting certain chemical signals.
-Cats may open their mouths slightly while analyzing certain smells.
-This behavior is known as the flehmen response.
+Cats have many more olfactory receptors than humans.
+Cats use scent to identify familiar individuals.
+Cats use scent marking to communicate.
 Cats have scent glands on their cheeks.
-Cats have scent glands around their lips.
 Cats have scent glands around their chin.
-Cats have scent glands around their tail area.
-Cats can leave scent information by rubbing against objects.
-Cats can rub their faces against people.
-Face rubbing can transfer scent from a cat onto an object or person.
-Cats can use urine to communicate territorial information.
-Urine marking is more common in some unneutered male cats.
-Cats can communicate through body posture.
-Cats can communicate through facial expressions.
-Cats can communicate through vocalizations.
-Cats can communicate through scent.
-Cats can communicate through physical contact.
-Cats can communicate using their tails.
-A raised tail can be a friendly greeting signal.
-A puffed-up tail can occur when a cat feels threatened.
-A rapidly moving tail can indicate arousal or irritation.
-Cats may flatten their ears when frightened.
-Cats may arch their backs when threatened.
-Cats may hiss when they feel threatened.
-Cats may growl as a warning.
-Cats may spit when highly defensive.
-Cats can purr.
-Purring commonly occurs when cats are relaxed.
-Cats can also purr during stressful situations.
-Some cats purr when experiencing discomfort.
-Cats can meow.
-Adult cats commonly use meowing to communicate with humans.
-Kittens use vocalizations to communicate with their mothers.
-Cats can produce different types of meows.
-Cats can chirp.
-Cats can trill.
-Cats can chatter while watching potential prey.
-Cats can make yowling sounds.
-Some cats are naturally more vocal than others.
-Individual cats can develop unique vocal patterns.
-Cats can recognize familiar sounds.
-Cats can learn routines associated with their owners.
-Cats can recognize familiar human voices.
-Cats can form strong social bonds with humans.
-Cats can show affection by rubbing against people.
-Cats can show affection by staying close to people.
-Cats can show affection through grooming.
-Cats can show affection through slow blinking.
-Cats may slowly blink at people they feel comfortable around.
-Cats may respond to a person's slow blink.
-Cats often prefer predictable routines.
-Sudden changes can cause stress in some cats.
-Cats may hide when they feel frightened.
-Cats often seek elevated locations.
-Elevated places allow cats to observe their surroundings.
-Cats may use hiding places when they want security.
-Cats can sleep for many hours each day.
-Cats commonly sleep around 12 to 16 hours per day.
-Some cats can sleep even longer than 16 hours.
-Kittens generally sleep more than adult cats.
-Older cats may also sleep more than younger adults.
-Cats experience different stages of sleep.
-Cats can enter deep sleep.
-Cats can dream during sleep.
-Cats may move their paws while sleeping.
-Cats may twitch their whiskers during sleep.
-Cats may make small sounds while sleeping.
-Cats are often most active around dawn and dusk.
-Cats are considered crepuscular animals.
-Domestic cats can also adjust their activity to household routines.
-Cats can remain alert while resting.
-Cats conserve energy through periods of rest.
-Cats have strong predatory instincts.
-Cats can stalk prey quietly.
-Cats can crouch low while hunting.
-Cats can remain motionless while watching prey.
-Cats can detect small movements.
-Cats can pounce quickly.
-Cats can use their claws to capture prey.
-Cats can use their teeth to kill prey.
-Kittens practice hunting through play.
-Chasing toys can resemble hunting behavior.
-Pouncing on toys can help kittens develop coordination.
-Cats can hunt even when they are well fed.
-Outdoor cats may hunt rodents.
-Outdoor cats may hunt birds.
-Outdoor cats may hunt insects.
-Cats can detect movement from small animals.
-Cats use their whiskers during close-range hunting.
-Cats can use their hearing to locate hidden prey.
-Cats can use their sense of smell while tracking animals.
-Cats have strong night-hunting adaptations.
-Cats can climb trees.
-Cats use their claws to grip tree bark.
-Cats can use their hind legs to push upward while climbing.
-Some cats are better climbers than others.
-Cats can have difficulty descending some trees.
-Cats can use their claws and body positioning when descending.
-Cats can jump onto high surfaces.
-Cats can jump from high surfaces to lower ones.
-Cats can land on their feet in many situations.
-Cats do not always survive high falls without injury.
-A cat's landing ability depends on several factors.
-Cats can spread their bodies during a fall to increase air resistance.
-Cats can rotate their bodies during a fall.
-Cats can use their tails for balance.
-A cat's tail contains vertebrae.
-Cats use their tails for communication and balance.
-Some cat breeds have naturally short tails.
-Some cats are born without a typical long tail.
-Tail length can be influenced by genetics.
-Cats have a highly flexible neck.
-Cats can turn their heads quickly toward sounds.
-Cats can move with very little noise.
-Cats have soft foot pads that reduce the sound of their steps.
-Cats can walk quietly while stalking prey.
-Cats can move their bodies close to the ground while hunting.
-Cats can use their claws for climbing and defense.
-Cats can extend their claws voluntarily.
-Cats normally keep their claws retracted while walking.
-Scratching can help remove old outer claw layers.
-Cats may scratch vertical surfaces.
-Cats may scratch horizontal surfaces.
-Cats often prefer textured scratching surfaces.
-Cats can learn to use scratching posts.
-Cats have natural territorial behaviors.
-Cats can mark territory using scent.
-Cats can mark territory through scratching.
-Cats can mark territory through urine.
-Cats may rub against objects to leave scent.
-Cats may rub against other cats.
-Cats can establish territories when resources are limited.
-Cats can live alone or in social groups.
-Cats may form colonies where food and shelter are available.
-Social behavior differs among individual cats.
-Some cats are highly social.
-Some cats prefer solitude.
-Some cats tolerate other cats better than others.
+Cats have scent glands near the base of their tail.
+Cats can leave scent by rubbing against objects.
+Cats have a vomeronasal organ called Jacobsons organ.
+Cats use Jacobsons organ to analyze certain chemical signals.
+Cats may open their mouths while analyzing interesting smells.
+Cats perform a behavior called the flehmen response.
+Cats have sensitive paw pads.
+Cats use paw pads to detect surfaces.
+Cats have sweat glands mainly in their paw pads.
+Cats can sweat through their paw pads.
+Cats regulate body temperature partly through grooming.
+Cats groom themselves by licking their fur.
+Cats spend significant time grooming.
+Cats use rough tongues to remove loose fur.
+Cats have tiny backward-facing structures on their tongues.
+Cats have keratin spines called filiform papillae on their tongues.
+Cats use their tongues to clean their coats.
+Cats can swallow loose hair during grooming.
+Cats may form hairballs from swallowed fur.
+Cats have specialized carnivorous teeth.
+Cats have sharp canine teeth.
+Cats use canine teeth to seize prey.
+Cats have small incisors at the front of their mouths.
+Cats have carnassial teeth adapted for slicing meat.
+Cats have powerful jaw muscles.
+Cats cannot chew food in the same way humans do.
+Cats generally tear meat rather than grind it.
+Cats are obligate carnivores.
+Cats require nutrients found naturally in animal tissues.
+Cats require taurine in their diet.
+Cats cannot produce enough taurine on their own.
+Cats require preformed vitamin A from dietary sources.
+Cats require arachidonic acid from their diet.
+Cats have relatively short digestive tracts.
+Cats have a digestive system adapted to meat-based diets.
+Cats can obtain much of their water from food.
+Cats have a relatively low thirst drive.
+Cats may drink less water when eating moist food.
+Cats have a flexible spine.
+Cats have more spinal flexibility than humans.
+Cats can twist their bodies during falls.
+Cats have a righting reflex.
+Cats can orient their bodies during a fall.
+Cats develop their righting reflex during kittenhood.
+Cats can land on their feet in many falls.
+Cats do not always land safely from every height.
+Cats can suffer serious injuries from falls.
+Cats have flexible joints that assist climbing.
+Cats can rotate their hind legs to adjust body position.
+Cats have strong hind limbs.
+Cats use powerful hind legs for jumping.
+Cats can jump several times their own body height.
+Cats can leap upward from a standing position.
+Cats use their front paws to stabilize landings.
+Cats can climb using claws and limb strength.
+Cats can descend trees using specialized paw positioning.
+Cats sometimes reverse their bodies while descending trees.
+Cats can squeeze through surprisingly narrow openings.
+Cats have flexible collarbones.
+Cats have loosely attached clavicles.
+Cats can fit through spaces roughly the width of their head.
+Cats have strong shoulder muscles.
+Cats use their shoulders during climbing.
+Cats can walk quietly on padded paws.
+Cats have soft paw pads that reduce noise.
+Cats use quiet movement when stalking prey.
+Cats can stalk prey by keeping their bodies low.
+Cats can freeze suddenly while hunting.
+Cats often approach prey with controlled movements.
+Cats can accelerate quickly over short distances.
+Cats are adapted for short bursts of speed.
+Cats are not endurance runners like many canids.
+Cats conserve energy between hunting efforts.
+Cats can sprint when chasing prey.
+Cats can change direction quickly while running.
+Cats use their tails to stabilize sharp turns.
+Cats have flexible ankles that aid jumping.
+Cats can jump onto elevated surfaces.
+Cats can climb fences using their claws.
+Cats can balance along narrow surfaces.
+Cats have a specialized inner ear for balance.
+Cats rely on their vestibular system for coordination.
+Cats can rotate their bodies during aerial movement.
+Cats have highly developed reflexes.
+Cats can react rapidly to sudden movements.
+Cats can extend their claws quickly.
+Cats can retract their claws when walking.
+Cats retract most claws into protective sheaths.
+Cats normally keep their claws hidden while walking.
+Cats use claws for defense.
+Cats use claws for climbing.
+Cats use claws for scratching.
+Cats scratch objects to maintain claw condition.
+Cats scratch surfaces to leave visual marks.
+Cats also use scratching to deposit scent.
+Cats have scent glands between their paw pads.
+Cats can communicate through scratching behavior.
+Cats may scratch vertically or horizontally.
+Cats often stretch their bodies while scratching.
+Cats can knead surfaces with their front paws.
+Cats knead using alternating paw movements.
+Cats may knead soft objects when relaxed.
+Cats sometimes knead before settling down.
+Cats can purr during relaxation.
+Cats can also purr in stressful situations.
+Cats may purr when injured or frightened.
+Cats produce purring through rhythmic laryngeal activity.
+Cats can produce different purring sounds.
+Cats communicate using vocalizations.
+Cats can meow to communicate with humans.
+Cats rarely use meowing extensively with adult cats.
+Cats use body language extensively with other cats.
+Cats use hissing as a defensive signal.
+Cats may growl when threatened.
+Cats can yowl during mating behavior.
+Cats can chirp when watching prey.
+Cats can trill as a friendly greeting.
+Cats can hiss by forcing air through the mouth.
+Cats can flatten their ears when threatened.
+Cats can arch their backs when frightened.
+Cats can raise their fur when startled.
+Cats can make their bodies appear larger when threatened.
+Cats use tail position to communicate mood.
+Cats may hold their tails upright during friendly greetings.
+Cats may tuck their tails when frightened.
+Cats may puff their tails during defensive displays.
+Cats may flick their tails during excitement or irritation.
+Cats communicate partly through facial expressions.
+Cats can narrow their eyes during relaxed interactions.
+Cats may slowly blink at trusted individuals.
+Cats can use slow blinking as a social signal.
+Cats recognize familiar human voices.
+Cats can distinguish some familiar sounds.
+Cats can learn their names.
+Cats can learn associations between sounds and events.
+Cats can remember learned routines.
+Cats can recognize familiar environments.
 Cats can recognize familiar individuals.
-Cats can remember locations associated with food.
-Cats can learn where resources are located.
-Cats can learn simple routines.
-Cats can be trained using positive reinforcement.
-Cats can learn to respond to their names.
+Cats can form social bonds with humans.
+Cats can form bonds with other cats.
+Cats can form bonds with other animals.
+Cats can show individual personality differences.
+Cats can be social or solitary depending on the individual.
+Cats vary greatly in their tolerance of handling.
+Cats can become strongly attached to familiar people.
+Cats may seek human attention voluntarily.
+Cats can rub their heads against people.
+Cats perform head bunting during social interactions.
+Cats can mark familiar people with facial scent glands.
+Cats may sleep near trusted companions.
+Cats can follow familiar people around the home.
+Cats can learn household routines.
+Cats often become active around predictable feeding times.
+Cats can associate specific sounds with food.
+Cats can learn to respond to food containers.
+Cats can learn through positive reinforcement.
+Cats can learn simple behaviors through training.
+Cats can be trained to use scratching posts.
+Cats can be trained to enter carriers.
 Cats can learn to use litter boxes.
-Cats can learn behaviors through repeated experiences.
-Cats can associate sounds with specific events.
-Cats can associate containers with feeding routines.
-Cats can anticipate regular feeding times.
-Cats can become accustomed to household schedules.
-Cats can experience fear.
-Cats can experience excitement.
-Cats can experience frustration.
-Cats can experience stress.
-Cats can show curiosity toward unfamiliar objects.
-Cats often investigate new objects by smelling them.
-Cats may touch unfamiliar objects with their paws.
-Cats may watch unfamiliar objects from a distance.
-Cats can become startled by sudden movements.
-Cats can react strongly to unfamiliar sounds.
-Cats may seek hiding places during stressful events.
-Cats can develop individual behavioral preferences.
-Cats can have different activity levels.
-Cats can have different food preferences.
-Cats can have different social preferences.
-Cats can have different sleeping habits.
-Cats can have different play preferences.
-Cats can have different vocalization patterns.
-Cats can have different tolerance levels for handling.
-Cats can become attached to familiar environments.
-Cats can recognize familiar scents.
-Cats can use scent to identify territory.
-Cats have specialized skin glands.
-Cats produce natural oils that help maintain their coats.
-Cats have fur that provides insulation.
-Fur can protect cats from environmental conditions.
-Cats can shed old hairs.
-Cats may shed more during seasonal changes.
-Long-haired cats generally require more grooming.
-Short-haired cats also benefit from grooming.
-Some cats have very dense coats.
-Some cats have curly coats.
-Some cats have naturally very little visible hair.
-Coat color in cats is influenced by genetics.
-Coat patterns in cats are influenced by genetics.
+Cats naturally bury some feces and urine.
+Cats use scent to communicate territory.
+Cats can mark territory with urine.
+Cats may spray urine when territorial.
+Cats can use feces as territorial signals.
+Cats may bury waste to reduce detectable scent.
+Cats do not always bury waste.
+Cats may leave waste exposed in territorial contexts.
+Cats have scent glands around the anal region.
+Cats use scent information to identify other cats.
+Cats can detect changes in familiar scents.
+Cats can recognize territorial boundaries through smell.
+Cats are crepuscular by evolutionary tendency.
+Cats can be active around dawn and dusk.
+Cats may adjust activity patterns to household schedules.
+Cats sleep for many hours each day.
+Cats commonly sleep between 12 and 16 hours daily.
+Cats may sleep longer when young or elderly.
+Cats experience both REM and non-REM sleep.
+Cats can enter REM sleep.
+Cats may move their paws during REM sleep.
+Cats may twitch their whiskers during sleep.
+Cats may dream during REM sleep.
+Cats can nap repeatedly throughout a day.
+Cats do not usually sleep continuously for one long period.
+Cats alternate between sleeping and waking periods.
+Cats can remain alert even while resting.
+Cats have sensitive hearing during rest.
+Cats can wake rapidly after hearing sudden sounds.
+Cats often choose elevated resting places.
+Cats may choose warm surfaces for sleeping.
+Cats may curl into compact sleeping positions.
+Cats conserve body heat by curling their bodies.
+Cats can stretch extensively after resting.
+Cats perform full-body stretches before activity.
+Cats can yawn after waking.
+Cats have flexible necks.
+Cats can turn their heads toward sounds.
+Cats have strong neck muscles.
+Cats use neck muscles while carrying prey.
+Cats naturally hunt small animals.
+Cats have retained many hunting behaviors despite domestication.
+Cats stalk moving objects as part of predatory behavior.
+Cats often watch prey before attacking.
+Cats use visual fixation during stalking.
+Cats may crouch before pouncing.
+Cats can pounce using their hind legs.
+Cats use their front paws to grab prey.
+Cats can use their claws to hold prey.
+Cats may bite prey with their canine teeth.
+Cats often deliver bites to vulnerable areas.
+Cats may play with prey-like objects.
+Cats use play to practice hunting movements.
+Cats often chase moving toys.
+Cats may bat objects with their front paws.
+Cats can catch small moving objects with their paws.
+Cats can use both front paws during play.
+Cats may switch paws during manipulation.
+Cats can show individual paw preferences.
+Cats use whiskers to help judge nearby spaces.
+Cats may spread their whiskers when exploring.
+Cats can move their whiskers forward during investigation.
+Cats may pull whiskers backward during defensive behavior.
+Cats have whiskers longer than ordinary facial hairs.
+Cats have whiskers on the upper lip.
+Cats have whiskers on the cheeks.
+Cats have whiskers above the eyes.
+Cats have whiskers on the backs of their front legs.
+Cats use these tactile hairs to detect nearby movement.
+Cats have highly sensitive touch receptors.
+Cats can detect vibrations through their paws.
+Cats can detect subtle surface movements.
+Cats use tactile information while hunting.
+Cats can detect prey hidden from direct view.
+Cats can locate small movements using hearing.
+Cats can rotate their ears toward separate sound sources.
+Cats have independently movable outer ears.
+Cats can pinpoint sounds with their hearing.
+Cats hear frequencies above the human hearing range.
+Cats can hear some ultrasonic frequencies used by rodents.
+Cats can hear high-pitched prey sounds.
+Cats have a wider hearing range than humans.
+Cats rely on hearing when hunting in darkness.
+Cats can detect rustling leaves during hunting.
+Cats can locate small animals beneath surfaces.
+Cats can hear sounds that humans may not notice.
+Cats have a strong startle response to sudden noises.
+Cats may hide after hearing unfamiliar sounds.
+Cats gradually learn which household sounds are harmless.
+Cats can habituate to repeated background noises.
+Cats can distinguish familiar household sounds.
+Cats have sensitive noses for detecting odors.
+Cats use smell to investigate new objects.
+Cats often sniff unfamiliar people.
+Cats may sniff other animals before social interaction.
+Cats use scent to identify territory.
+Cats can detect pheromone-related chemical signals.
+Cats have specialized nasal structures for odor detection.
+Cats can process odor information through their olfactory system.
+Cats may respond strongly to unfamiliar scents.
+Cats may rub against objects after investigating them.
+Cats use facial rubbing to leave scent.
+Cats have sebaceous glands associated with scent marking.
+Cats can mark objects without urinating on them.
+Cats can leave scent through rubbing.
+Cats can combine visual and scent signals during territorial behavior.
+Cats use body posture during social communication.
+Cats can communicate fear through crouching.
+Cats can communicate aggression through stiff posture.
+Cats can communicate friendliness through relaxed posture.
+Cats may expose their belly while relaxed.
+Cats do not necessarily want their belly touched when exposed.
+Cats may roll onto their backs during play.
+Cats can use sideways body positions during play.
+Cats may approach humans with an upright tail.
+Cats may rub against human legs during greetings.
+Cats can greet familiar cats through nose contact.
+Cats may groom other cats socially.
+Cats perform allogrooming with familiar companions.
+Cats can sleep in groups when social bonds are strong.
+Cats may share resting spaces with familiar cats.
+Cats can establish social hierarchies in groups.
+Cats living together can form stable social relationships.
+Cats may share resources when resources are abundant.
+Cats can become stressed when resources are limited.
+Cats may prefer separate feeding locations.
+Cats may prefer separate litter areas.
+Cats can develop territorial behavior around resources.
+Cats may defend preferred resting areas.
+Cats can recognize individual cats through scent.
+Cats can recognize individual cats through visual cues.
+Cats can recognize familiar cats by vocalizations.
+Cats communicate territorial information through urine.
+Cats may spray more frequently during territorial conflict.
+Cats can mark vertical surfaces with urine.
+Cats can leave scent marks on trees and walls.
+Cats may scratch prominent objects within territory.
+Cats often scratch after waking.
+Cats may scratch near sleeping areas.
+Cats can stretch their forelimbs while scratching.
+Cats maintain claw sharpness through scratching.
+Cats shed the outer layers of their claws naturally.
+Cats have claws made largely of keratin.
+Cats can retract claws using specialized tendons.
+Cats extend claws when muscles contract.
+Cats use claws during climbing.
+Cats use claws to secure footing on rough surfaces.
+Cats can climb trees using front and rear claws.
+Cats may climb trees to escape threats.
+Cats may climb elevated places to observe surroundings.
+Cats often prefer high locations for resting.
+Cats can judge jumping distances visually.
+Cats use depth perception during jumps.
+Cats calculate landing positions through visual cues.
+Cats adjust body posture during jumps.
+Cats use their tail to assist aerial balance.
+Cats can rotate their torso during aerial movement.
+Cats can correct their orientation before landing.
+Cats may survive falls that would seriously injure humans.
+Cats can still suffer severe injuries from falls.
+Cats are vulnerable to broken bones after high falls.
+Cats can suffer chest and abdominal injuries after falls.
+Cats should not be intentionally dropped or tested.
+Cats use their flexible spines during rapid movement.
+Cats can compress and extend their bodies while running.
+Cats can accelerate from rest quickly.
+Cats can make sharp turns while chasing prey.
+Cats use their hindquarters for explosive movement.
+Cats can leap horizontally across gaps.
+Cats can leap vertically onto furniture.
+Cats can jump from floors onto tables.
+Cats can jump from tables onto higher surfaces.
+Cats can climb using coordinated limb movements.
+Cats can descend cautiously from elevated surfaces.
+Cats sometimes reverse down trees because of claw orientation.
+Cats have paws shaped differently at the front and rear.
+Cats have larger front paws than rear paws.
+Cats use front paws for capturing prey.
+Cats use rear paws for propulsion.
+Cats can use their paws to manipulate objects.
+Cats may open doors by pulling handles.
+Cats may learn to push objects with their paws.
+Cats can bat lightweight objects across floors.
+Cats can pick up small objects with their mouths.
+Cats sometimes carry toys in their mouths.
+Cats may carry prey using their jaws.
+Cats have strong jaw muscles relative to their body size.
+Cats have sharp premolars and molars adapted for cutting.
+Cats have reduced grinding surfaces compared with omnivorous mammals.
+Cats have a tongue adapted for removing meat from bones.
+Cats can use their tongues to lap liquids.
+Cats drink by rapidly moving their tongues.
+Cats create a column of liquid with their tongue during drinking.
+Cats are capable of precise tongue movements while drinking.
+Cats have a sensitive sense of taste.
+Cats have fewer taste buds than humans.
+Cats cannot taste sweetness normally.
+Cats lack a functional sweet taste receptor.
+Cats are highly sensitive to certain amino-acid-related tastes.
+Cats can taste bitter compounds.
+Cats can taste sour compounds.
+Cats can taste salty compounds.
+Cats have taste receptors suited to carnivorous diets.
+Cats may reject foods that smell unfamiliar.
+Cats often rely heavily on smell when evaluating food.
+Cats may stop eating food when its odor changes.
+Cats can detect freshness through sensory cues.
+Cats have a relatively high protein requirement.
+Cats require essential amino acids from dietary sources.
+Cats require arginine in their diet.
+Cats require taurine for normal health.
+Cats require dietary arachidonic acid.
+Cats require vitamin A in preformed dietary form.
+Cats require niacin in their diet.
+Cats obtain many essential nutrients from animal tissues.
+Cats are not nutritionally suited to a plant-only diet.
+Cats can digest animal proteins efficiently.
+Cats can obtain moisture from meat.
+Cats may have low water intake when food contains sufficient moisture.
+Cats eating dry food generally need access to fresh water.
+Cats should have continuous access to clean drinking water.
+Cats can become dehydrated when water intake is inadequate.
+Cats may prefer moving water sources.
+Cats may drink from fountains because of water movement.
+Cats can recognize familiar water sources.
+Cats may avoid water placed near food.
+Cats can show individual preferences for drinking locations.
+Cats have kidneys adapted to conserving water.
+Cats produce relatively concentrated urine.
+Cats kidneys help maintain fluid balance.
+Cats kidneys regulate electrolyte concentrations.
+Cats can develop urinary problems when hydration is inadequate.
+Cats require veterinary care for persistent urinary symptoms.
+Cats have a normal body temperature higher than humans.
+Cats normally have body temperatures around 38 to 39 degrees Celsius.
+Cats regulate temperature through behavior and physiology.
+Cats seek warm places when cold.
+Cats seek cooler surfaces when overheated.
+Cats groom to help maintain their coat.
+Cats coats provide insulation.
+Cats can raise their fur in cold conditions.
+Cats may flatten their fur when warm.
+Cats can pant when severely overheated or stressed.
+Cats normally breathe through their noses.
+Cats may breathe rapidly during stress or exertion.
+Cats should not normally pant heavily at rest.
+Cats have a relatively high respiratory rate compared with humans.
+Cats have a four-chambered heart.
+Cats have two atria and two ventricles.
+Cats circulate oxygenated blood through systemic arteries.
+Cats use lungs for gas exchange.
+Cats have two lungs.
+Cats have a diaphragm separating chest and abdomen.
+Cats use the diaphragm during breathing.
+Cats have a skeletal system adapted for agility.
+Cats have numerous vertebrae in their spine.
+Cats have a flexible lumbar region.
+Cats have a long tail containing multiple vertebrae.
+Cats tail vertebrae vary among individuals and breeds.
+Cats with naturally short tails can have fewer tail vertebrae.
+Cats use their tails for communication.
+Cats may hold their tails low when uncertain.
+Cats may hold their tails high during friendly greetings.
+Cats may curl their tails around familiar companions.
+Cats may twitch their tail tip while focused.
+Cats may lash their tails during agitation.
+Cats can communicate without making sounds.
+Cats rely heavily on posture and movement.
+Cats can communicate through scent, sound, and touch.
+Cats can learn predictable human routines.
+Cats can anticipate regular feeding schedules.
+Cats can learn the location of household resources.
+Cats can remember familiar routes through their environment.
+Cats can navigate familiar territories.
+Cats use environmental landmarks while navigating.
+Cats can learn through observation.
+Cats can learn by associating actions with rewards.
+Cats can solve some simple food puzzles.
+Cats can manipulate puzzle feeders with their paws.
+Cats may learn to open simple containers.
+Cats can become bored without environmental stimulation.
+Cats benefit from opportunities for climbing and exploration.
+Cats benefit from scratching surfaces.
+Cats benefit from interactive play.
+Cats benefit from hiding places.
+Cats often feel safer when they have accessible hiding spots.
+Cats may hide when stressed.
+Cats may retreat from unfamiliar visitors.
+Cats can gradually become comfortable with new environments.
+Cats can become stressed by sudden environmental changes.
+Cats may show reduced appetite during stress.
+Cats may groom excessively during stress.
+Cats may vocalize more during stress.
+Cats may become less social during stress.
+Cats need safe spaces in multi-cat households.
+Cats can benefit from multiple separated resources.
+Cats may compete over food and resting areas.
+Cats can experience conflict when territories overlap.
+Cats can establish preferred sleeping locations.
+Cats may rotate between several sleeping locations.
+Cats often choose locations with favorable temperature.
+Cats may sleep in sunlight during cooler periods.
+Cats may seek shade during warm periods.
+Cats can adjust their sleeping position to temperature.
+Cats can curl into a ball to conserve heat.
+Cats can stretch out to release heat.
+Cats can sleep with their paws covering their face.
+Cats may sleep on their backs when deeply relaxed.
+Cats may sleep sitting upright for short periods.
+Cats can wake quickly from light sleep.
+Cats have periods of deeper sleep.
+Cats experience rapid eye movement during REM sleep.
+Cats may make small movements during dreams.
+Cats may twitch their ears during sleep.
+Cats may move their whiskers during sleep.
+Cats can sleep after intense play.
+Cats often groom before resting.
+Cats may groom after waking.
+Cats use grooming to maintain coat condition.
+Cats remove dirt and loose hairs through grooming.
+Cats distribute skin oils through grooming.
+Cats can ingest loose fur while grooming.
+Cats may regurgitate hairballs.
+Cats with long fur can be more prone to hairballs.
+Cats can develop tangled fur without regular grooming.
+Cats with dense coats may require additional grooming.
+Cats shed fur throughout the year.
+Cats often shed more during seasonal changes.
+Cats replace old hairs through normal shedding.
+Cats coats can differ greatly among breeds.
+Cats can have short coats.
+Cats can have medium-length coats.
+Cats can have long coats.
+Cats can have curly coats.
+Cats can have hairless or nearly hairless appearances.
+Cats coat colors can result from different genetic combinations.
 Cats can have solid-colored coats.
-Cats can have striped coats.
-Cats can have spotted coats.
+Cats can have striped tabby patterns.
+Cats can have spotted patterns.
+Cats can have tortoiseshell patterns.
+Cats can have calico patterns.
+Cats can have colorpoint patterns.
 Cats can have bicolor coats.
-Cats can have tortoiseshell coats.
-Cats can have calico coats.
-Cats can have colorpoint coats.
-Tabby is a coat pattern rather than a specific breed.
-Most calico cats are female.
-Male calico cats are uncommon.
-Orange coat coloration is linked to genes on the X chromosome.
-Some cats have blue eyes.
-Some cats have green eyes.
-Some cats have yellow or gold eyes.
-Some cats have copper-colored eyes.
-Some cats have odd-colored eyes.
-Odd-colored eyes are called heterochromia.
-Certain cat breeds are more likely to have specific eye colors.
-Certain cat breeds have distinctive coat patterns.
-Siamese cats commonly have darker coloration on their extremities.
-Maine Coon cats are among the largest domestic cat breeds.
-Persian cats are known for long coats.
-Sphynx cats have very little visible body hair.
-Bengal cats commonly have spotted or marbled patterns.
-Ragdoll cats are known for their large size and semi-long coat.
-British Shorthair cats have dense coats.
-Abyssinian cats commonly have ticked coats.
-Scottish Fold cats can have folded ears.
-Manx cats can have naturally short or absent tails.
-Domestic cats have been bred into many recognized breeds.
-Selective breeding has produced major differences among cat breeds.
-Cat breed sizes can vary considerably.
-Cat ear shapes can vary between breeds.
-Cat coat lengths can vary between breeds.
-Cat body shapes can vary between breeds.
-Cat facial shapes can vary between breeds.
-Cats are descendants of carnivorous ancestors.
-Domestic cats are closely related to wildcats.
-The domestic cat's scientific name is Felis catus.
-African wildcats are closely related to domestic cats.
-Cats became associated with human settlements partly because rodents were attracted to stored food.
+Cats can have tricolor coats.
+Cats can have white markings on their paws.
+Cats can have white markings on their faces.
+Cats can have different eye colors.
+Cats can have blue eyes.
+Cats can have green eyes.
+Cats can have yellow or gold eyes.
+Cats can have copper-colored eyes.
+Cats can have odd-colored eyes.
+Cats with heterochromia have differently colored eyes.
+Cats can inherit coat traits through their genes.
+Cats genetic variation influences physical appearance.
+Cats can inherit certain health conditions.
+Cats can inherit blood-type differences.
+Cats have three commonly recognized feline blood groups.
+Cats can have type A blood.
+Cats can have type B blood.
+Cats can have type AB blood.
+Cats blood type matters in veterinary transfusions.
+Cats should receive compatible blood during transfusions.
+Cats can have different body sizes among breeds.
+Cats can vary greatly in weight.
+Cats body size is influenced by genetics and nutrition.
+Cats grow rapidly during kittenhood.
+Cats kittens are born with their eyes closed.
+Cats kittens are also born with their ears folded.
+Cats kittens rely heavily on smell and touch after birth.
+Cats newborn kittens cannot regulate body temperature effectively.
+Cats newborn kittens depend on their mother for warmth.
+Cats newborn kittens depend on milk for nutrition.
+Cats mother cats produce milk for their kittens.
+Cats kittens begin opening their eyes after birth.
+Cats kittens generally open their eyes during the first two weeks.
+Cats kittens develop hearing during early development.
+Cats kittens begin walking during early development.
+Cats kittens begin exploring their surroundings as mobility improves.
+Cats kittens develop coordination through play.
+Cats kittens practice hunting behaviors through play.
+Cats kittens learn social behavior through interaction.
+Cats kittens may begin solid food during weaning.
+Cats kittens are commonly weaned over several weeks.
+Cats kittens develop adult teeth gradually.
+Cats kittens have temporary milk teeth.
+Cats kittens eventually replace milk teeth with adult teeth.
+Cats adult cats normally have 30 permanent teeth.
+Cats mothers teach kittens important behaviors.
+Cats mothers may bring prey to older kittens.
+Cats mothers may demonstrate hunting behavior.
+Cats kittens learn through observation and practice.
+Cats young cats often have high activity levels.
+Cats reach sexual maturity before full physical maturity.
+Cats can reproduce at a relatively young age.
+Cats females can experience multiple reproductive cycles.
+Cats female reproductive cycles are influenced by daylight.
+Cats are seasonally polyestrous in many environments.
+Cats can have multiple litters during a breeding season.
+Cats pregnancy lasts roughly two months.
+Cats typically give birth to several kittens per litter.
+Cats litter size varies among individuals.
+Cats kittens are born unable to see clearly.
+Cats newborn kittens have immature coordination.
+Cats newborn kittens communicate with soft vocalizations.
+Cats kittens can knead while nursing.
+Cats kittens use scent to identify their mother.
+Cats kittens depend on maternal care during early life.
+Cats adult females can become highly protective of kittens.
+Cats mothers groom their kittens.
+Cats mothers stimulate kittens to eliminate during early development.
+Cats kittens gradually learn independent toileting.
+Cats kittens develop stronger motor skills through exploration.
+Cats kittens become increasingly independent during weaning.
+Cats young adults develop adult body proportions over time.
+Cats can live for many years with proper care.
+Cats indoor cats often live longer than many free-roaming cats.
+Cats lifespan varies with genetics and environment.
+Cats veterinary care can improve preventive health.
+Cats vaccinations can protect against several infectious diseases.
+Cats parasite prevention can reduce common parasite risks.
+Cats dental care can help maintain oral health.
+Cats regular veterinary examinations can detect health problems.
+Cats obesity can increase health risks.
+Cats healthy body weight supports mobility.
+Cats regular play can provide physical exercise.
+Cats environmental enrichment can support natural behaviors.
+Cats interactive toys can encourage stalking and chasing.
+Cats food puzzles can provide mental stimulation.
+Cats scratching posts can satisfy scratching behavior.
+Cats climbing structures can provide vertical exercise.
+Cats hiding spaces can provide security.
+Cats predictable routines can reduce environmental uncertainty.
+Cats clean litter boxes can encourage appropriate toileting.
+Cats generally prefer clean toileting areas.
+Cats may avoid dirty litter boxes.
+Cats may show litter-box problems when stressed or ill.
+Cats sudden behavior changes can indicate health problems.
+Cats changes in appetite can signal illness.
+Cats changes in drinking can signal health problems.
+Cats changes in urination can signal health problems.
+Cats changes in grooming can signal health problems.
+Cats sudden hiding can sometimes indicate discomfort.
+Cats persistent vomiting requires veterinary attention.
+Cats persistent diarrhea requires veterinary attention.
+Cats difficulty breathing requires urgent veterinary attention.
+Cats inability to urinate can be a medical emergency.
+Cats should never be given human medicines without veterinary guidance.
+Cats can be poisoned by substances that are harmless to humans.
+Cats are particularly sensitive to some essential oils.
+Cats can be harmed by lilies.
+Cats can develop poisoning after ingesting certain plants.
+Cats should have access to cat-safe environments.
+Cats can be injured by unsecured windows.
+Cats can fall from balconies.
+Cats should not be allowed unrestricted access to unsafe heights.
+Cats can become trapped in small spaces.
+Cats can become overheated inside vehicles.
+Cats should never be left inside a hot parked vehicle.
+Cats require protection from extreme environmental temperatures.
+Cats can become stressed during transportation.
+Cats often associate carriers with previous experiences.
+Cats can be trained to tolerate carriers gradually.
+Cats may hide when a carrier appears.
+Cats can travel safely when properly secured.
+Cats should not travel loose inside moving vehicles.
+Cats can adapt to indoor living.
+Cats can adapt to apartment environments.
+Cats can thrive indoors when their behavioral needs are met.
+Cats need opportunities to climb and explore indoors.
+Cats need appropriate places to scratch indoors.
+Cats need fresh water indoors.
+Cats need appropriate nutrition indoors.
+Cats need clean litter facilities indoors.
+Cats can bond strongly with indoor caregivers.
+Cats can recognize household members.
+Cats can distinguish familiar and unfamiliar people.
+Cats may greet familiar people at doors.
+Cats may wait near doors for returning companions.
+Cats can learn household schedules.
+Cats can recognize the sound of familiar footsteps.
+Cats can recognize familiar voices.
+Cats may respond differently to different people.
+Cats can form preferences for particular sleeping places.
+Cats can form preferences for particular toys.
+Cats can become attached to familiar objects.
+Cats may carry favorite toys.
+Cats may hide toys in unusual places.
+Cats can play with objects that move unpredictably.
+Cats often prefer toys that imitate prey movement.
+Cats may chase feather-like objects.
+Cats may chase small moving objects.
+Cats may stalk toys before pouncing.
+Cats can become overstimulated during play.
+Cats may bite or scratch during intense play.
+Cats benefit from play sessions that allow hunting sequences.
+Cats often enjoy chase, capture, and reward patterns.
+Cats can become less active with age.
+Cats older cats may sleep more.
+Cats older cats can develop reduced mobility.
+Cats older cats may need easier access to resources.
+Cats older cats can benefit from regular veterinary monitoring.
+Cats senior cats can develop age-related diseases.
+Cats kidney disease is common in older cats.
+Cats dental disease can occur at any age.
+Cats arthritis can affect older cats.
+Cats may hide pain because they are prey-adapted animals.
+Cats subtle behavior changes can be important health clues.
+Cats regular observation helps owners notice changes.
+Cats healthy cats usually maintain regular grooming.
+Cats reduced grooming can indicate discomfort or illness.
+Cats excessive grooming can cause hair loss.
+Cats bald patches can have several possible causes.
+Cats skin changes should be evaluated when persistent.
+Cats ear problems can cause scratching or head shaking.
+Cats eye problems can cause squinting or discharge.
+Cats breathing problems can cause open-mouth breathing.
+Cats open-mouth breathing is abnormal in most resting cats.
+Cats persistent coughing warrants veterinary evaluation.
+Cats sudden weakness can require urgent veterinary assessment.
+Cats seizures require veterinary evaluation.
+Cats poisoning requires prompt veterinary care.
+Cats can recover from many illnesses with timely treatment.
+Cats are commonly kept as companion animals worldwide.
 Cats have lived alongside humans for thousands of years.
-Ancient Egyptians depicted cats in artwork.
-Cats had important cultural associations in ancient Egypt.
-The Egyptian goddess Bastet was associated with cats.
-Cats were sometimes mummified in ancient Egypt.
-Domestic cats spread to many regions through human movement.
-Cats eventually became established on many continents.
-Cats can adapt to a wide variety of environments.
-Cats can live in cities.
-Cats can live in rural environments.
-Cats can live in homes.
-Cats can live in barns.
-Cats can survive in many climates when adequate resources are available.
-Cats require fresh water for normal body function.
-Cats can obtain some water from food.
-Cats generally have a strong sensitivity to water balance.
-Wet food can contain much more water than dry food.
-Cats require animal-derived nutrients in their diet.
-Taurine is an essential nutrient for cats.
-Cats require preformed vitamin A in their diet.
-Cats require arachidonic acid in their diet.
-Cats need adequate protein.
-Cats use protein to support muscles and body tissues.
-Cats have a digestive system adapted to a meat-based diet.
-Cats have a relatively short digestive tract compared with many herbivorous animals.
-Cats generally have little ability to taste sweetness.
-Cats have taste receptors that differ from those of humans.
-Cats can distinguish certain bitter tastes.
-Cats can distinguish sour tastes.
-Cats can distinguish salty tastes.
-Cats can detect the taste of certain amino acids.
-Cats may prefer foods with strong animal aromas.
-Cats can develop food preferences from early experiences.
-Cats can become picky eaters.
-Cats can drink water using rapid movements of their tongues.
-A cat's tongue bends backward during drinking.
-Cats use their
+Cats were associated with ancient Egyptian culture.
+Cats were depicted in ancient Egyptian art.
+Cats were sometimes associated with Egyptian deities.
+Cats were kept around settlements partly for rodent control.
+Cats likely benefited from early agricultural settlements.
+Cats could prey on rodents attracted to stored grain.
+Cats spread with human populations across many regions.
+Cats became established in numerous human communities.
+Cats have been selectively bred into many modern breeds.
+Cats breeds differ in body shape and coat characteristics.
+Cats breed traits can include ear shape and tail length.
+Cats breed traits can include coat texture.
+Cats breed traits can include facial structure.
+Cats breed traits can include body size.
+Cats mixed-breed cats can show diverse physical traits.
+Cats domestic populations contain extensive genetic variation.
+Cats domestic cats are commonly classified as Felis catus.
+Cats belong to the order Carnivora.
+Cats belong to the suborder Feliformia.
+Cats are closely related to other felids.
+Cats share ancestry with wild feline species.
+Cats retain many behaviors found in wild cats.
+Cats hunting instincts can remain strong in domestic cats.
+Cats territorial behavior reflects their feline ancestry.
+Cats scent-marking behavior reflects their feline ancestry.
+Cats grooming behavior is characteristic of felids.
+Cats retractable claws are characteristic of most felids.
+Cats flexible bodies support feline hunting strategies.
+Cats night-adapted vision supports low-light activity.
+Cats sensitive hearing supports prey detection.
+Cats whiskers support close-range environmental sensing.
+Cats powerful hind legs support pouncing.
+Cats quiet paws support stealthy movement.
+Cats sharp claws support gripping and climbing.
+Cats sharp teeth support meat consumption.
+Cats carnassial teeth support cutting flesh.
+Cats obligate carnivory distinguishes cats from many domestic mammals.
+Cats physiology reflects their evolutionary specialization for animal-based diets.
+Cats remain effective small-prey hunters despite domestication.
+Cats can survive in diverse human environments.
+Cats can live in cities when resources are available.
+Cats can live in rural areas.
+Cats can live in households with other pets.
+Cats can live as indoor-only companions.
+Cats can live as community cats in outdoor environments.
+Cats outdoor cats face risks from traffic and predators.
+Cats outdoor cats face infectious disease risks.
+Cats outdoor cats can encounter toxic substances.
+Cats outdoor cats can contribute to wildlife predation.
+Cats controlled outdoor access can reduce some risks.
+Cats enclosed outdoor spaces can provide safer stimulation.
+Cats harness training can allow some cats controlled outdoor exploration.
+Cats individual cats differ in their response to harnesses.
+Cats should be introduced to new equipment gradually.
+Cats can learn to accept grooming with positive reinforcement.
+Cats can learn to tolerate nail trimming.
+Cats claws naturally grow continuously.
+Cats scratching helps maintain claw condition.
+Cats nail trimming can reduce accidental scratching damage.
+Cats should have species-appropriate scratching surfaces.
+Cats scratching behavior is normal feline behavior.
+Cats should not be punished for normal scratching.
+Cats can be redirected toward appropriate scratching posts.
+Cats may prefer different scratching textures.
+Cats may prefer vertical scratching surfaces.
+Cats may prefer horizontal scratching surfaces.
+Cats can scratch immediately after waking.
+Cats may scratch near entrances or social areas.
+Cats scratching can combine visual and scent communication.
+Cats communicate through multiple sensory channels.
+Cats use sound, scent, posture, touch, and movement.
+Cats social communication can be subtle.
+Cats can learn human responses to their signals.
+Cats may repeat behaviors that receive desired responses.
+Cats can learn that meowing attracts human attention.
+Cats can learn that certain sounds predict food.
+Cats can learn that certain actions open doors.
+Cats can learn to use pet doors.
+Cats can learn simple target-training behaviors.
+Cats can learn to sit with appropriate training.
+Cats can learn to come when called.
+Cats may ignore calls when distracted.
+Cats attention can vary with motivation.
+Cats food motivation can assist training.
+Cats play motivation can assist training.
+Cats require short training sessions for many behaviors.
+Cats can become frustrated during repetitive training.
+Cats respond best when training avoids fear and punishment.
+Cats can associate positive experiences with new environments.
+Cats can become comfortable with gradual introductions.
+Cats introductions between cats should usually be gradual.
+Cats may need separate resources during introductions.
+Cats scent swapping can help familiarization between cats.
+Cats can recognize another cats scent before direct contact.
+Cats may exchange bedding scents during introductions.
+Cats may vocalize during territorial introductions.
+Cats can require weeks to adjust to another cat.
+Cats individual temperament affects social compatibility.
+Cats may prefer solitary living.
+Cats may prefer living with compatible companions.
+Cats social preferences can change with age.
+Cats can form close bonds with littermates.
+Cats littermates may sleep together.
+Cats littermates may groom one another.
+Cats littermates may play together.
+Cats bonded cats may show distress after separation.
+Cats can recognize familiar companions after periods apart.
+Cats can maintain social bonds through grooming.
+Cats can maintain bonds through shared resting.
+Cats can maintain bonds through friendly approaches.
+Cats can communicate boundaries through hissing.
+Cats can communicate boundaries through growling.
+Cats can avoid conflict by retreating.
+Cats may use elevated spaces to avoid other animals.
+Cats can use hiding places to escape unwanted interactions.
+Cats require access to resources without forced competition.
+Cats can experience stress from overcrowding.
+Cats can develop urine marking during social stress.
+Cats may overgroom during anxiety.
+Cats may change sleeping patterns during stress.
+Cats may change appetite during illness or stress.
+Cats may become more vocal during discomfort.
+Cats may become unusually withdrawn when unwell.
+Cats may become unusually aggressive when painful.
+Cats behavior can provide clues about welfare.
+Cats welfare improves when physical and behavioral needs are met.
+Cats need safe resting areas.
+Cats need appropriate nutrition.
+Cats need clean water.
+Cats need suitable toileting areas.
+Cats need opportunities for natural behaviors.
+Cats need protection from preventable hazards.
+Cats benefit from veterinary preventive care.
+Cats benefit from regular observation by caregivers.
+Cats can be fascinating because their senses are highly specialized.
+Cats combine speed, balance, hearing, vision, smell, and touch during hunting.
+Cats are agile predators despite their relatively small body size.
+Cats are among the most widespread companion mammals.
+Cats remain closely connected to humans while retaining wild instincts.
+Cats have evolved specialized anatomy for stealth and predation.
+Cats use their bodies efficiently during climbing and jumping.
+Cats use their senses continuously to evaluate their surroundings.
+Cats can detect subtle changes in their environment.
+Cats can adapt their behavior to different surroundings.
+Cats can learn from repeated experiences.
+Cats can remember familiar places and routines.
+Cats can recognize individuals through multiple sensory cues.
+Cats can communicate without human-like speech.
+Cats have complex social and territorial behaviors.
+Cats remain one of the most recognizable domesticated mammals.
