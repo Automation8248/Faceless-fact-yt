@@ -8,7 +8,7 @@ import edge_tts
 import re
 from moviepy.editor import *
 
-# Configuration (Matched exactly with your GitHub Actions log)
+# Configuration
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 TELEGRAM_TOKEN_SUCCESS = os.environ.get("TELEGRAM_BOT_TOKEN_SUCCESS")
 TELEGRAM_TOKEN_FAIL = os.environ.get("TELEGRAM_BOT_TOKEN_FAIL")
@@ -50,15 +50,30 @@ def send_telegram(token, message):
 
 async def generate_audio_and_subs(text, voice, audio_filename, vtt_filename):
     communicate = edge_tts.Communicate(text, voice)
-    submaker = edge_tts.SubMaker()
+    subs = []
+    
     with open(audio_filename, "wb") as file:
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":
                 file.write(chunk["data"])
             elif chunk["type"] == "WordBoundary":
-                submaker.create_sub((chunk["offset"], chunk["duration"]), chunk["text"])
-    with open(vtt_filename, "w", encoding="utf-8") as file:
-        file.write(submaker.generate_subs())
+                subs.append((chunk["offset"], chunk["duration"], chunk["text"]))
+                
+    # Manually generating VTT file
+    with open(vtt_filename, "w", encoding="utf-8") as f:
+        f.write("WEBVTT\n\n")
+        for offset, duration, word in subs:
+            start_sec = offset / 10000000.0
+            end_sec = (offset + duration) / 10000000.0
+            
+            def format_time(seconds):
+                h = int(seconds // 3600)
+                m = int((seconds % 3600) // 60)
+                s = int(seconds % 60)
+                ms = int(round((seconds - int(seconds)) * 1000))
+                return f"{h:02d}:{m:02d}:{s:02d}.{ms:03d}"
+                
+            f.write(f"{format_time(start_sec)} --> {format_time(end_sec)}\n{word}\n\n")
 
 def parse_vtt_to_clips(vtt_file):
     clips = []
@@ -83,7 +98,6 @@ def parse_vtt_to_clips(vtt_file):
     return clips
 
 def manage_image_limit(folder_path, limit=10):
-    """Maintain max 10 images in category folder."""
     images = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg'))]
     if len(images) >= limit:
         images.sort(key=os.path.getmtime)
@@ -92,7 +106,6 @@ def manage_image_limit(folder_path, limit=10):
             except: pass
 
 def get_image_from_api(prompt, local_folder):
-    """Generate image using API and SAVE it to folder. Fallback to random saved image if API fails."""
     os.makedirs(local_folder, exist_ok=True)
     url = f"https://ansh-apis.is-dev.org/api/nano?key={API_KEY}&prompt={prompt}"
     
@@ -103,7 +116,6 @@ def get_image_from_api(prompt, local_folder):
             img_data = requests.get(img_url).content
             manage_image_limit(local_folder, limit=10) 
             
-            # Save generated image locally
             file_path = os.path.join(local_folder, f"{int(datetime.datetime.now().timestamp())}.jpg")
             with open(file_path, 'wb') as f:
                 f.write(img_data)
@@ -112,7 +124,6 @@ def get_image_from_api(prompt, local_folder):
     except Exception as e:
         print(f"API Image generation fail hua: {e}. Searching for local fallback...")
     
-    # Fallback to previously saved image
     if os.path.exists(local_folder):
         images = [img for img in os.listdir(local_folder) if img.endswith(('.png', '.jpg', '.jpeg'))]
         if images: 
@@ -169,27 +180,23 @@ async def main():
         selected_data = []
         available_categories = []
         
-        # LOGIC: Check all categories. Only pick those that have AT LEAST 1 fresh fact.
         for t in topics:
             t_path = os.path.join(BASE_DIR, t)
             for c in os.listdir(t_path):
                 c_path = os.path.join(t_path, c)
                 if os.path.isdir(c_path):
                     v_facts = get_valid_facts(t, c, history)
-                    if len(v_facts) > 0: # Ensures the folder is not empty and has unused facts
+                    if len(v_facts) > 0: 
                         available_categories.append({"topic": t, "category": c, "fresh_facts": v_facts})
                         
         if not available_categories:
             raise Exception("Koi bhi valid category folder nahi mila jismein fresh facts hon!")
             
-        # Randomize order of available valid categories
         random.shuffle(available_categories)
         
-        # Select up to 3 facts
         for item in available_categories:
             if len(selected_data) == 3: break
             
-            # Unused facts filter karke ek random select karo
             v_facts = [f for f in item["fresh_facts"] if f not in [sd["fact"] for sd in selected_data]]
             if v_facts:
                 chosen_fact = random.choice(v_facts)
@@ -198,13 +205,11 @@ async def main():
                     "category": item["category"],
                     "fact": chosen_fact
                 })
-                # Temporarily add to history for this run
                 history[chosen_fact] = datetime.datetime.now().isoformat()
 
         if len(selected_data) < 3:
             raise Exception("Kam se kam 3 facts ki zarurat hai (alag alag ya same topic/category se), par utne fresh facts bache nahi hain.")
 
-        # Hook Text setup
         if not os.path.exists("hooks.txt"):
             raise Exception("hooks.txt file nahi mili!")
             
@@ -212,19 +217,16 @@ async def main():
             hooks = [line.strip() for line in f if line.strip()]
         hook_text = random.choice(hooks)
 
-        # 1. Generate Audios & Subtitles
         await generate_audio_and_subs(hook_text, "en-US-GuyNeural", "hook.mp3", "hook.vtt")
         
         video_segments = []
         
-        # 2. Build Hook Clip (Black background + Center Text)
         hook_audio = AudioFileClip("hook.mp3")
         hook_bg = ColorClip(size=(1080, 1920), color=(0,0,0), duration=hook_audio.duration)
         hook_subs = parse_vtt_to_clips("hook.vtt")
         hook_clip = CompositeVideoClip([hook_bg] + hook_subs).set_audio(hook_audio)
         video_segments.append(hook_clip)
 
-        # 3. Build Fact Clips (Image Center + Subtitles Center)
         voices = ["en-US-AriaNeural", "en-US-GuyNeural", "en-US-AriaNeural"]
         for i, data in enumerate(selected_data):
             audio_f = f"fact{i}.mp3"
@@ -233,7 +235,6 @@ async def main():
             
             f_audio = AudioFileClip(audio_f)
             
-            # Fetch and download image for this specific category
             img_folder = os.path.join(BASE_DIR, data["topic"], data["category"], "images")
             img_path = get_image_from_api(data["category"], img_folder)
             
@@ -247,10 +248,8 @@ async def main():
             f_clip = CompositeVideoClip([f_bg, f_img] + f_subs).set_audio(f_audio)
             video_segments.append(f_clip)
 
-        # Combine all clips
         final_video = concatenate_videoclips(video_segments)
 
-        # 4. Add Background Music (if music folder exists)
         if os.path.exists("music"):
             music_files = [f for f in os.listdir("music") if f.endswith(".mp3")]
             if music_files:
@@ -259,22 +258,17 @@ async def main():
                 final_audio = CompositeAudioClip([final_video.audio, bg_music])
                 final_video = final_video.set_audio(final_audio)
 
-        # Output file
         output_file = "final_short.mp4"
         final_video.write_videofile(output_file, fps=24, codec="libx264", audio_codec="aac")
 
-        # 5. Upload Video
         video_url = upload_video(output_file)
 
-        # 6. Hit Webhook
         if WEBHOOK_URL:
             requests.post(WEBHOOK_URL, json={"url": video_url})
         
-        # 7. Save History File
         with open("history.json", "w") as f:
             json.dump(history, f, indent=4)
 
-        # 8. Success Telegram notification
         success_msg = f"✅ Social media name: The interesting Facts\nPost link URL: {video_url}"
         send_telegram(TELEGRAM_TOKEN_SUCCESS, success_msg)
         print("Success! Video created and uploaded.")
