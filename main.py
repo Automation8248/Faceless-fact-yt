@@ -8,10 +8,10 @@ import edge_tts
 import re
 from moviepy.editor import *
 
-# Configuration
+# Configuration (Matched exactly with your GitHub Actions log)
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
-TELEGRAM_TOKEN_SUCCESS = os.environ.get("TELEGRAM_TOKEN_SUCCESS")
-TELEGRAM_TOKEN_FAIL = os.environ.get("TELEGRAM_TOKEN_FAIL")
+TELEGRAM_TOKEN_SUCCESS = os.environ.get("TELEGRAM_BOT_TOKEN_SUCCESS")
+TELEGRAM_TOKEN_FAIL = os.environ.get("TELEGRAM_BOT_TOKEN_FAIL")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 API_KEY = "ansh"
 BASE_DIR = "Topics" 
@@ -30,7 +30,7 @@ UPLOAD_SERVERS = [
     {"url": "https://api.bayfiles.com/upload", "data": {}, "file_key": "file"},
     {"url": "https://up.labstack.com/api/v1/links", "data": {}, "file_key": "file"},
     {"url": "https://transfer.sh/", "data": {}, "file_key": "file"},
-    {"url": "https://v.gd/create.php", "data": {"format": "simple"}, "file_key": "url"}, # URL shortener fallback
+    {"url": "https://v.gd/create.php", "data": {"format": "simple"}, "file_key": "url"}, 
     {"url": "https://api.filemail.com/api/file/upload", "data": {}, "file_key": "file"},
     {"url": "https://pomf.lain.la/upload.php", "data": {}, "file_key": "files[]"},
     {"url": "https://suki.moe/api/upload", "data": {}, "file_key": "file"},
@@ -43,7 +43,10 @@ UPLOAD_SERVERS = [
 def send_telegram(token, message):
     if not token or not TELEGRAM_CHAT_ID: return
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": message})
+    try:
+        requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": message})
+    except Exception as e:
+        print(f"Telegram failed: {e}")
 
 async def generate_audio_and_subs(text, voice, audio_filename, vtt_filename):
     communicate = edge_tts.Communicate(text, voice)
@@ -57,7 +60,7 @@ async def generate_audio_and_subs(text, voice, audio_filename, vtt_filename):
     with open(vtt_filename, "w", encoding="utf-8") as file:
         file.write(submaker.generate_subs())
 
-def parse_vtt_to_clips(vtt_file, video_size=(1080, 1920)):
+def parse_vtt_to_clips(vtt_file):
     clips = []
     with open(vtt_file, "r", encoding="utf-8") as f:
         content = f.read()
@@ -80,7 +83,7 @@ def parse_vtt_to_clips(vtt_file, video_size=(1080, 1920)):
     return clips
 
 def manage_image_limit(folder_path, limit=10):
-    """Updated Limit to 10 images max per category folder."""
+    """Maintain max 10 images in category folder."""
     images = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg'))]
     if len(images) >= limit:
         images.sort(key=os.path.getmtime)
@@ -89,24 +92,34 @@ def manage_image_limit(folder_path, limit=10):
             except: pass
 
 def get_image_from_api(prompt, local_folder):
+    """Generate image using API and SAVE it to folder. Fallback to random saved image if API fails."""
     os.makedirs(local_folder, exist_ok=True)
     url = f"https://ansh-apis.is-dev.org/api/nano?key={API_KEY}&prompt={prompt}"
+    
     try:
         response = requests.get(url, timeout=20).json()
         img_url = response.get("url") or response.get("image") or response.get("image_url")
         if img_url:
             img_data = requests.get(img_url).content
-            manage_image_limit(local_folder, limit=10) # 10 images limit
+            manage_image_limit(local_folder, limit=10) 
+            
+            # Save generated image locally
             file_path = os.path.join(local_folder, f"{int(datetime.datetime.now().timestamp())}.jpg")
             with open(file_path, 'wb') as f:
                 f.write(img_data)
+            print(f"API se image download aur save ho gayi: {file_path}")
             return file_path
-    except:
-        pass
+    except Exception as e:
+        print(f"API Image generation fail hua: {e}. Searching for local fallback...")
     
+    # Fallback to previously saved image
     if os.path.exists(local_folder):
         images = [img for img in os.listdir(local_folder) if img.endswith(('.png', '.jpg', '.jpeg'))]
-        if images: return os.path.join(local_folder, random.choice(images))
+        if images: 
+            fallback = random.choice(images)
+            print(f"Local fallback image use kar raha hu: {fallback}")
+            return os.path.join(local_folder, fallback)
+            
     return None
 
 def get_valid_facts(topic, category, history):
@@ -138,7 +151,7 @@ def upload_video(file_path):
                         return res.text.strip()
         except:
             continue
-    raise Exception("Failed to upload video to all 20+ servers.")
+    raise Exception("Failed to upload video to all servers.")
 
 async def main():
     try:
@@ -147,32 +160,37 @@ async def main():
             try: history = json.load(f)
             except: history = {}
 
+        if not os.path.exists(BASE_DIR):
+            raise Exception(f"Main '{BASE_DIR}' folder hi nahi mila!")
+
         topics = [d for d in os.listdir(BASE_DIR) if os.path.isdir(os.path.join(BASE_DIR, d))]
-        if not topics: raise Exception("No Topics found!")
+        if not topics: raise Exception("No Topics found in Base folder!")
         
         selected_data = []
         available_categories = []
         
-        # LOGIC UPDATE: Sirf unhi folders ko list mein add karega jahan facts.txt exist karta hai aur empty nahi hai
+        # LOGIC: Check all categories. Only pick those that have AT LEAST 1 fresh fact.
         for t in topics:
             t_path = os.path.join(BASE_DIR, t)
             for c in os.listdir(t_path):
                 c_path = os.path.join(t_path, c)
                 if os.path.isdir(c_path):
-                    facts_file = os.path.join(c_path, "facts.txt")
-                    if os.path.exists(facts_file) and os.path.getsize(facts_file) > 0:
-                        available_categories.append({"topic": t, "category": c})
+                    v_facts = get_valid_facts(t, c, history)
+                    if len(v_facts) > 0: # Ensures the folder is not empty and has unused facts
+                        available_categories.append({"topic": t, "category": c, "fresh_facts": v_facts})
                         
         if not available_categories:
-            raise Exception("Koi bhi valid category folder nahi mila jismein facts.txt ho!")
+            raise Exception("Koi bhi valid category folder nahi mila jismein fresh facts hon!")
             
-        # Randomly shuffle topics/categories
+        # Randomize order of available valid categories
         random.shuffle(available_categories)
         
-        # 3 distinct facts select karega different categories se
+        # Select up to 3 facts
         for item in available_categories:
             if len(selected_data) == 3: break
-            v_facts = get_valid_facts(item["topic"], item["category"], history)
+            
+            # Unused facts filter karke ek random select karo
+            v_facts = [f for f in item["fresh_facts"] if f not in [sd["fact"] for sd in selected_data]]
             if v_facts:
                 chosen_fact = random.choice(v_facts)
                 selected_data.append({
@@ -180,30 +198,33 @@ async def main():
                     "category": item["category"],
                     "fact": chosen_fact
                 })
-                # Temporary add to history array to avoid duplicate selection in the same run
+                # Temporarily add to history for this run
                 history[chosen_fact] = datetime.datetime.now().isoformat()
 
         if len(selected_data) < 3:
-            raise Exception("Not enough fresh facts across categories to select 3 distinct facts.")
+            raise Exception("Kam se kam 3 facts ki zarurat hai (alag alag ya same topic/category se), par utne fresh facts bache nahi hain.")
 
-        # Hook setup
+        # Hook Text setup
+        if not os.path.exists("hooks.txt"):
+            raise Exception("hooks.txt file nahi mili!")
+            
         with open("hooks.txt", "r") as f:
             hooks = [line.strip() for line in f if line.strip()]
         hook_text = random.choice(hooks)
 
-        # Generate Audio and VTT Subs
+        # 1. Generate Audios & Subtitles
         await generate_audio_and_subs(hook_text, "en-US-GuyNeural", "hook.mp3", "hook.vtt")
         
         video_segments = []
         
-        # Build Hook Clip with Synced Subtitles
+        # 2. Build Hook Clip (Black background + Center Text)
         hook_audio = AudioFileClip("hook.mp3")
         hook_bg = ColorClip(size=(1080, 1920), color=(0,0,0), duration=hook_audio.duration)
         hook_subs = parse_vtt_to_clips("hook.vtt")
         hook_clip = CompositeVideoClip([hook_bg] + hook_subs).set_audio(hook_audio)
         video_segments.append(hook_clip)
 
-        # Build Fact Clips with Alternating Voices
+        # 3. Build Fact Clips (Image Center + Subtitles Center)
         voices = ["en-US-AriaNeural", "en-US-GuyNeural", "en-US-AriaNeural"]
         for i, data in enumerate(selected_data):
             audio_f = f"fact{i}.mp3"
@@ -211,9 +232,14 @@ async def main():
             await generate_audio_and_subs(data["fact"], voices[i], audio_f, vtt_f)
             
             f_audio = AudioFileClip(audio_f)
+            
+            # Fetch and download image for this specific category
             img_folder = os.path.join(BASE_DIR, data["topic"], data["category"], "images")
             img_path = get_image_from_api(data["category"], img_folder)
             
+            if not img_path:
+                raise Exception(f"Image nahi mili {data['category']} ke liye!")
+                
             f_bg = ColorClip(size=(1080, 1920), color=(0,0,0), duration=f_audio.duration)
             f_img = ImageClip(img_path).resize(width=900).set_position('center').set_duration(f_audio.duration)
             
@@ -221,36 +247,41 @@ async def main():
             f_clip = CompositeVideoClip([f_bg, f_img] + f_subs).set_audio(f_audio)
             video_segments.append(f_clip)
 
-        # Combine Videos
+        # Combine all clips
         final_video = concatenate_videoclips(video_segments)
 
-        # Add Background Music
-        music_files = [f for f in os.listdir("music") if f.endswith(".mp3")]
-        if music_files:
-            bg_music = AudioFileClip(os.path.join("music", random.choice(music_files)))
-            bg_music = bg_music.fx(vfx.loop, duration=final_video.duration).volumex(0.1)
-            final_audio = CompositeAudioClip([final_video.audio, bg_music])
-            final_video = final_video.set_audio(final_audio)
+        # 4. Add Background Music (if music folder exists)
+        if os.path.exists("music"):
+            music_files = [f for f in os.listdir("music") if f.endswith(".mp3")]
+            if music_files:
+                bg_music = AudioFileClip(os.path.join("music", random.choice(music_files)))
+                bg_music = bg_music.fx(vfx.loop, duration=final_video.duration).volumex(0.1)
+                final_audio = CompositeAudioClip([final_video.audio, bg_music])
+                final_video = final_video.set_audio(final_audio)
 
+        # Output file
         output_file = "final_short.mp4"
         final_video.write_videofile(output_file, fps=24, codec="libx264", audio_codec="aac")
 
-        # Upload Video
+        # 5. Upload Video
         video_url = upload_video(output_file)
 
-        # Send Webhook
-        requests.post(WEBHOOK_URL, json={"url": video_url})
+        # 6. Hit Webhook
+        if WEBHOOK_URL:
+            requests.post(WEBHOOK_URL, json={"url": video_url})
         
-        # Save History finally to JSON
+        # 7. Save History File
         with open("history.json", "w") as f:
             json.dump(history, f, indent=4)
 
-        # Success Message
+        # 8. Success Telegram notification
         success_msg = f"✅ Social media name: The interesting Facts\nPost link URL: {video_url}"
         send_telegram(TELEGRAM_TOKEN_SUCCESS, success_msg)
+        print("Success! Video created and uploaded.")
 
     except Exception as e:
         error_msg = f"❌ Automation Failed!\nAutomation name: Fact Shorts\nSocial media name: The interesting Facts\nError: {str(e)}"
+        print(f"Error occurred: {e}")
         send_telegram(TELEGRAM_TOKEN_FAIL, error_msg)
 
 if __name__ == "__main__":
